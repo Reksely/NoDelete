@@ -109,8 +109,8 @@ const NoDelete: Plugin = {
                             message: {
                                 ...originalMessage,
                                 edited_timestamp: "invalid_timestamp",
-                                content:
-                                    originalMessage?.content + " `[deleted]`",
+                                content: // puttin red color instead of [deleted]
+                                    `<span style="color: red;">${originalMessage?.content}</span>`,
                                 guild_id: ChannelStore.getChannel(
                                     originalMessage?.channel_id
                                 )?.guild_id,
